@@ -1,0 +1,13 @@
+<%= form_with url: "confirmedit", method: :post , data: {turbo: false} do |form| %>
+    <div>
+        <%= form.hidden_field :isRoot, value: false %>
+        <%= form.hidden_field :id, value: @id %>
+        <div>Edit Score</div>
+        <%= form.label :query, "name" %>
+        <%= form.text_field :"name" , value: @name %>
+        <%= form.label :query, "score" %>
+        <%= form.text_field :"score" , value: @score %>
+        <div><%= form.submit "save change" %></div>
+        <div><%= link_to "cancle", controller: "main", action: "showAll" %></div>
+    </a>
+<% end %>

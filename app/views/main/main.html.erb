@@ -1,0 +1,17 @@
+<%= form_with url: "/submit", method: :post , data: {turbo: false} do |form| %>
+    <div>
+        <div>Your Grade</div>
+        <% (1..@n).each do |i| %>
+            <div>
+                <%= form.label :query, "Subject :"%>
+                <%= form.text_field :"sub#{i}" %>
+                <%= form.label :query, "score :"%>
+                <%= form.text_field :"scr#{i}" %>
+                <% if @r == false and !@c[i-1] %>
+                    please fill this row
+                <% end %>
+            </div>       
+        <% end %>
+        <div><%= form.submit "Submit" %></div>
+    </div>
+<% end %>

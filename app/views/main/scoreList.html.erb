@@ -1,0 +1,15 @@
+<div> Max score subject is <%= @max_subject %> </div>
+<div> Sum = <%= @sum %> </div>
+<div>
+<%= link_to "add", controller: "main", action: "add"%>
+</div>
+<table>
+<% for e in @allStudent do %>
+    <tr>
+        <td><%= e.name %><td>
+        <td><%= e.score %></td>
+        <td><%= link_to "delete", controller: "main", action: "delete", id: e.id, :method => :delete%><td>
+        <td><%= link_to "edit", controller: "main", action: "edit", id: e.id, :method => :edit%></td>
+    <tr>
+<% end %>
+</table>
